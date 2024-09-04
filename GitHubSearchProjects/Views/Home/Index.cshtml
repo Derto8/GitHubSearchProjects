@@ -1,0 +1,19 @@
+﻿@model GitHubSearchProjects.Models.SearchModel; 
+
+<form class="form-inline" method="post">
+
+    <div class="form-group mx-sm-3 mb-2">
+        @Html.LabelFor(model => model.SearchValue, htmlAttributes: new { @for = "inputName", @class = "ms-2" })
+        @Html.EditorFor(model => model.SearchValue, new { htmlAttributes = new { @class = "form-control", id = "inputName" } })
+        @Html.ValidationMessageFor(model => model.SearchValue, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="text-center form-actions">
+        <button type="submit" class="btn btn-primary mb-2" id="find_btn">Найти</button>
+    </div>  
+</form>
+
+@section Scripts {
+    <script src='@Url.Content("~/js/search_projects.js")'></script>
+    <script>GithubPage.init();</script>
+}

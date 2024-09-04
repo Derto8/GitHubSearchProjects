@@ -1,0 +1,46 @@
+﻿@model GitHubSearchProjects.Models.SearchingResultModel;
+
+<div>
+    @Html.ActionLink("Обратно", "Index", null, htmlAttributes: new { @class = "btn btn-danger mb-2" })
+
+    <div class="row">
+        @foreach (var data in Model.GithubRepositories)
+        {
+            <a class="card mb-2 col-md-6 btn" href="@data.Url" target="_blank">
+                <div class="ms-3">
+                    <div class="form-group row">
+                        @Html.LabelFor(model => data.Name, htmlAttributes: new { @class = "col-form-label col-md-6" })
+                        <p class="col-form-label col-md-6">
+                            @Html.DisplayFor(model => data.Name)
+                        </p>
+                        <hr style="width: 99%" />
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => data.Login, htmlAttributes: new { @class = "col-form-label col-md-6" })
+                        <p class="col-form-label col-md-6">
+                            @Html.DisplayFor(model => data.Login)
+                        </p>
+                        <hr style="width: 99%" />
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => data.StargazersCount, htmlAttributes: new { @class = "col-form-label col-md-6" })
+                        <p class="col-form-label col-md-6">
+                            @Html.DisplayFor(model => data.StargazersCount)
+                        </p>
+                        <hr style="width: 99%" />
+                    </div>
+
+                    <div class="form-group row">
+                        @Html.LabelFor(model => data.WatchersCount, htmlAttributes: new { @class = "col-form-label col-md-6" })
+                        <p class="col-form-label col-md-6">
+                            @Html.DisplayFor(model => data.WatchersCount)
+                        </p>
+                        <hr style="width: 99%" />
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
