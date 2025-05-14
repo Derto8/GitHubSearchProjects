@@ -6,6 +6,6 @@ namespace GitHubSearchProjects.Models
     {
         [Display(Name = "Название репозитория")]
         [Required(ErrorMessage = "Введите название репозитория")]
-        public string SearchValue { get; set; }
+        public string SearchValue { get; set; }   
     }
 }
